@@ -2,10 +2,7 @@
 
 ````markdown
 
-
 Real-Time AI System for Indian Sign Language Detection using Python, MediaPipe, and TensorFlow/Keras.
-
----
 
 ## Features
 
@@ -13,9 +10,6 @@ Real-Time AI System for Indian Sign Language Detection using Python, MediaPipe, 
 - Trains a deep learning model on extracted hand keypoints.
 - Provides real-time predictions using your webcam.
 - Modular workflow: Preprocessing → Training → Real-Time Prediction.
-
----
-
 
 ````
 ## Setup Instructions
