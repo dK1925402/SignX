@@ -3,97 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indian Sign Language Recognition</title>
+  <title>Indian Sign Language Recognition - README</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
       line-height: 1.6;
-      background-color: #f4f6f9;
       color: #333;
-      margin: 0;
-      padding: 0;
     }
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    h1, h2, h3 {
+      color: #2c7a7b;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 20px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #4CAF50;
-      border-bottom: 2px solid #4CAF50;
+    h1 {
+      border-bottom: 3px solid #2c7a7b;
       padding-bottom: 5px;
     }
-    pre, code {
-      background: #f1f1f1;
-      padding: 10px;
+    code, pre {
+      background-color: #eaeaea;
+      padding: 5px 10px;
       border-radius: 5px;
-      display: block;
+      font-family: monospace;
+    }
+    pre {
       overflow-x: auto;
     }
     ul, ol {
       padding-left: 20px;
     }
-    .note {
-      background: #fffae6;
+    section {
+      margin-bottom: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
       padding: 10px;
-      border-left: 5px solid #ff9800;
-      margin-bottom: 15px;
-      border-radius: 5px;
+      text-align: left;
+    }
+    .note {
+      background-color: #fff3cd;
+      border-left: 5px solid #ffc107;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
     }
     footer {
       text-align: center;
-      padding: 15px;
-      background: #333;
+      margin-top: 40px;
+      padding: 15px 0;
+      background: #2c7a7b;
       color: white;
-      margin-top: 20px;
-    }
-    .command {
-      background: #222;
-      color: #00ff88;
-      padding: 8px 10px;
       border-radius: 5px;
-      font-family: monospace;
-      display: inline-block;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Indian Sign Language Recognition 🤟</h1>
-    <p>Real-Time AI System for Indian Sign Language Detection</p>
-  </header>
 
-  <div class="container">
-    <section>
-      <h2>🌟 Features</h2>
-      <ul>
-        <li>Detects both <strong>left and right hand landmarks</strong> in real-time using MediaPipe.</li>
-        <li>Trains a <strong>deep learning model</strong> on extracted hand keypoints.</li>
-        <li>Provides real-time predictions using your webcam.</li>
-        <li>Modular workflow: Preprocessing → Training → Real-Time Prediction.</li>
-      </ul>
-    </section>
+  <h1>Indian Sign Language Recognition 🤟</h1>
 
-    <section>
-      <h2>📂 Folder Structure</h2>
-      <pre>
+  <section>
+    <h2>Features</h2>
+    <ul>
+      <li>Detects left and right hand landmarks in real-time using <strong>MediaPipe</strong>.</li>
+      <li>Trains a <strong>deep learning model</strong> on extracted keypoints.</li>
+      <li>Provides real-time predictions via webcam.</li>
+      <li>Modular workflow: Preprocessing → Training → Real-Time Prediction.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Folder Structure</h2>
+    <pre>
 Indian-Sign-Language-Recognition-pycode
 │
 ├── requirements.txt
-├── README.md
+├── README.html
 │
 └── test
     ├── ISL_CSLRT_Corpus
@@ -114,118 +105,112 @@ Indian-Sign-Language-Recognition-pycode
     │
     ├── realtime_hand_predict.py
     └── train_word_model_from_scratch.py
-      </pre>
-    </section>
+    </pre>
+  </section>
 
-    <section>
-      <h2>⚙️ Setup Instructions</h2>
+  <section>
+    <h2>Setup Instructions</h2>
 
-      <h3>1. Clone the Repository</h3>
-      <pre class="command">git clone &lt;repository_url&gt;
-cd Indian-Sign-Language-Recognition-pycode</pre>
+    <h3>1. Clone the repository</h3>
+    <pre><code>git clone &lt;repository_url&gt;
+cd Indian-Sign-Language-Recognition-pycode</code></pre>
 
-      <h3>2. Install Dependencies</h3>
-      <p>Make sure you have <strong>Python 3.10+</strong> installed.</p>
-      <pre class="command">pip install -r requirements.txt</pre>
+    <h3>2. Install dependencies</h3>
+    <pre><code>pip install -r requirements.txt</code></pre>
 
-      <h4>requirements.txt:</h4>
-      <pre>
+    <h4>requirements.txt</h4>
+    <pre><code>
 numpy>=1.24.0
 opencv-python>=4.9.0.80
 mediapipe>=0.10.15
 tensorflow>=2.15.0
 scikit-learn>=1.4.0
-      </pre>
+    </code></pre>
 
-      <h3>3. Prepare Dataset</h3>
-      <p>Place your videos in:</p>
-      <pre>test/ISL_CSLRT_Corpus/Frames_Word_Level/</pre>
+    <h3>3. Prepare Dataset</h3>
+    <p>Place your ISL dataset videos inside:</p>
+    <pre>test/ISL_CSLRT_Corpus/Frames_Word_Level/</pre>
 
-      <h3>4. Extract Keypoints</h3>
-      <p>Run the preprocessing script:</p>
-      <pre class="command">python test/utils/extract_keypoints.py</pre>
+    <h3>4. Extract Keypoints</h3>
+    <pre><code>python test/utils/extract_keypoints.py</code></pre>
 
-      <h3>5. Train the Model</h3>
-      <p>Train a deep learning model using the extracted keypoints:</p>
-      <pre class="command">python test/train_word_model_from_scratch.py</pre>
+    <h3>5. Train Model</h3>
+    <pre><code>python test/train_word_model_from_scratch.py</code></pre>
 
-      <h3>6. Real-Time Prediction</h3>
-      <p>Run webcam-based prediction:</p>
-      <pre class="command">python test/realtime_hand_predict.py</pre>
-      <p><strong>Press `q`</strong> to quit.</p>
-    </section>
+    <h3>6. Real-Time Prediction</h3>
+    <pre><code>python test/realtime_hand_predict.py</code></pre>
+    <p>Press <strong>q</strong> to quit the window.</p>
+  </section>
 
-    <section>
-      <h2>🚀 Usage Flow</h2>
-      <table border="1" cellpadding="6" cellspacing="0">
-        <tr>
-          <th>Step</th>
-          <th>Script</th>
-          <th>Output</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>extract_keypoints.py</td>
-          <td>Keypoints `.npy` + labels `.txt`</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>train_word_model_from_scratch.py</td>
-          <td>Trained `.keras` model + label encoder `.npy`</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>realtime_hand_predict.py</td>
-          <td>Live sign language predictions</td>
-        </tr>
-      </table>
-    </section>
+  <section>
+    <h2>Usage Flow</h2>
+    <table>
+      <tr>
+        <th>Step</th>
+        <th>Script</th>
+        <th>Output</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>extract_keypoints.py</td>
+        <td>Keypoints `.npy` + labels `.txt`</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>train_word_model_from_scratch.py</td>
+        <td>Trained `.keras` model + label encoder `.npy`</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>realtime_hand_predict.py</td>
+        <td>Live sign language predictions</td>
+      </tr>
+    </table>
+  </section>
 
-    <section>
-      <h2>💡 Run Without Dataset</h2>
-      <p>If you don't have a dataset, create dummy files:</p>
-      <pre>
-import numpy as np
+  <section>
+    <h2>Run Without Dataset</h2>
+    <p>If you don't have a dataset, create dummy files:</p>
+    <pre><code>import numpy as np
 np.save("test/labels/train_word_input_hands.npy", np.zeros((10, 126)))
 with open("test/labels/train_word_labels.txt", "w") as f:
     f.write("\n".join(["dummy"]*10))
-np.save("test/labels/word_labels_nodes.npy", np.array(["dummy"]))
-      </pre>
-    </section>
+np.save("test/labels/word_labels_nodes.npy", np.array(["dummy"]))</code></pre>
+  </section>
 
-    <section>
-      <h2>🛠 Troubleshooting</h2>
-      <ul>
-        <li><strong>FileNotFoundError</strong>: Ensure you have run preprocessing and training scripts first.</li>
-        <li><strong>Webcam not opening</strong>: Check camera permissions or try <code>cv2.VideoCapture(1)</code>.</li>
-        <li><strong>Random predictions</strong>: Train the model properly with a good dataset.</li>
-        <li><strong>Slow performance</strong>: Use a machine with GPU support for TensorFlow.</li>
-      </ul>
-    </section>
+  <section>
+    <h2>Troubleshooting</h2>
+    <ul>
+      <li><strong>FileNotFoundError:</strong> Run preprocessing and training scripts first.</li>
+      <li><strong>Webcam not opening:</strong> Check permissions or use cv2.VideoCapture(1).</li>
+      <li><strong>Random predictions:</strong> Model not trained or dataset too small.</li>
+      <li><strong>Slow performance:</strong> Use a system with GPU support.</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>🔧 Tech Stack</h2>
-      <ul>
-        <li>Python 3.10+</li>
-        <li>TensorFlow / Keras</li>
-        <li>MediaPipe</li>
-        <li>OpenCV</li>
-        <li>Scikit-learn</li>
-      </ul>
-    </section>
+  <section>
+    <h2>Tech Stack</h2>
+    <ul>
+      <li>Python 3.10+</li>
+      <li>TensorFlow / Keras</li>
+      <li>MediaPipe</li>
+      <li>OpenCV</li>
+      <li>Scikit-learn</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>🌱 Future Improvements</h2>
-      <ul>
-        <li>Support sentence-level ISL recognition.</li>
-        <li>Deploy model as a web or mobile app.</li>
-        <li>Integrate with text-to-speech for accessibility.</li>
-      </ul>
-    </section>
+  <section>
+    <h2>Future Improvements</h2>
+    <ul>
+      <li>Support sentence-level ISL recognition.</li>
+      <li>Deploy as web or mobile app.</li>
+      <li>Integrate text-to-speech for accessibility.</li>
+    </ul>
+  </section>
 
-    <footer>
-      <p>Indian Sign Language Recognition Project &copy; 2025 | Open Source</p>
-    </footer>
-  </div>
+  <footer>
+    <p>Indian Sign Language Recognition Project &copy; 2025 | Open Source</p>
+  </footer>
+
 </body>
 </html>
