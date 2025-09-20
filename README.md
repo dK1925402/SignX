@@ -24,7 +24,7 @@ Real-Time AI System for Indian Sign Language Detection using Python, MediaPipe, 
 
 ```bash
 git clone https://github.com/dK1925402/SignX.git
-cd Indian-Sign-Language-Recognition-pycode
+cd SignX
 ```
 
 ### 2. Install Dependencies
@@ -44,6 +44,12 @@ scikit-learn>=1.4.0
 ```
 
 ---
+
+### 3. Run Pre-trained Model
+
+```bash
+python realtime_hand_predict.py
+```
 
 ## Prepare Dataset
 
