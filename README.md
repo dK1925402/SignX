@@ -45,6 +45,14 @@ scikit-learn>=1.4.0
 python realtime_hand_predict.py
 ```
 
+### if want Retrained add Kaggle ISL data set 
+
+```
+ Link : https://www.kaggle.com/datasets/drblack00/isl-csltr-indian-sign-language-dataset/data
+```
+
+<img width="374" height="615" alt="image" src="https://github.com/user-attachments/assets/39e39f4d-fff8-4c34-8660-872cd6a8a1fe" />
+
 ## Prepare Dataset
 
 If you have the ISL dataset, place videos inside:
