@@ -16,14 +16,16 @@ Real-Time AI System for Indian Sign Language Detection using Python, MediaPipe, 
 
 ---
 
+
+````
 ## Setup Instructions
 
 ### 1. Clone Repository
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/dK1925402/SignX.git
 cd Indian-Sign-Language-Recognition-pycode
-````
+```
 
 ### 2. Install Dependencies
 
