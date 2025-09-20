@@ -147,14 +147,4 @@ cap = cv2.VideoCapture(1)
 
 ---
 
-✅ **Explanation:**  
-- The entire README is written in Markdown syntax (`.md`).  
-- **Code blocks** are wrapped with triple backticks ``` for shell commands, Python snippets, and text blocks.  
-- It includes **requirements.txt**, dataset instructions, dummy dataset example, and running instructions.  
 
----
-
-If you want, I can make a **super compact version** that only **shows requirements + dummy dataset code**, so it’s extremely minimal for quick usage.  
-
-Do you want me to do that?
-````
