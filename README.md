@@ -143,7 +143,6 @@ cap = cv2.VideoCapture(1)
 * Deploy as web or mobile application.
 * Integrate text-to-speech for accessibility.
 
-````
 
 
 
