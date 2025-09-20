@@ -1,68 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indian Sign Language Recognition - README</title>
-  <style>
-    /* Dark GitHub-like theme */
-    body {
-      background-color: #0d1117;
-      color: #c9d1d9;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
-      color: #58a6ff;
-      margin-top: 1.5em;
-    }
-    h1 {
-      border-bottom: 2px solid #30363d;
-      padding-bottom: 5px;
-    }
-    code {
-      background-color: #161b22;
-      color: #f0f6fc;
-      padding: 3px 6px;
-      border-radius: 6px;
-      font-family: monospace;
-    }
-    pre {
-      background-color: #161b22;
-      padding: 10px;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-    a { color: #58a6ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul, ol { padding-left: 20px; }
-    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
-    th, td { border: 1px solid #30363d; padding: 10px; }
-    th { background-color: #161b22; }
-    tr:nth-child(even) { background-color: #0d1117; }
-    .note {
-      background-color: #1c2a35;
-      border-left: 5px solid #58a6ff;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 15px 0;
-      background: #161b22;
-      color: #8b949e;
-      border-radius: 5px;
-    }
-  </style>
-</head>
-<body>
+Ah! You want the **README content itself in a “code block” format** so that it can be **directly placed inside a `.md` file or displayed as code**. Here’s your full README entirely in Markdown code block style:
 
-<h1>Indian Sign Language Recognition 🤟</h1>
-<p>Real-Time AI System for Indian Sign Language Detection</p>
+````markdown
+# Indian Sign Language Recognition 🤟
 
-</body>
-</html>
+Real-Time AI System for Indian Sign Language Detection using Python, MediaPipe, and TensorFlow/Keras.
+
+---
+
+## Features
+
+- Detects left and right hand landmarks in real-time using **MediaPipe**.
+- Trains a deep learning model on extracted hand keypoints.
+- Provides real-time predictions using your webcam.
+- Modular workflow: Preprocessing → Training → Real-Time Prediction.
+
+---
+
+## Setup Instructions
+
+### 1. Clone Repository
+
+```bash
+git clone <repository_url>
+cd Indian-Sign-Language-Recognition-pycode
+````
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+#### requirements.txt
+
+```text
+numpy>=1.24.0
+opencv-python>=4.9.0.80
+mediapipe>=0.10.15
+tensorflow>=2.15.0
+scikit-learn>=1.4.0
+```
+
+---
+
+## Prepare Dataset
+
+If you have the ISL dataset, place videos inside:
+
+```
+test/ISL_CSLRT_Corpus/Frames_Word_Level/
+```
+
+**Example folder structure:**
+
+```
+Frames_Word_Level/
+├── Hello/
+├── ThankYou/
+├── ...
+```
+
+### Running Without Dataset
+
+If you **don’t have the dataset**, you can create dummy files:
+
+```python
+import numpy as np
+
+# Dummy keypoints for 10 samples (42*3*2 = 252 features)
+np.save("test/labels/train_word_input_hands.npy", np.zeros((10, 126)))
+
+# Dummy labels
+with open("test/labels/train_word_labels.txt", "w") as f:
+    f.write("\n".join(["dummy"]*10))
+
+# Dummy label encoder
+np.save("test/labels/word_labels_nodes.npy", np.array(["dummy"]))
+```
+
+This will allow the scripts to **run without errors**, even without the original dataset.
+
+---
+
+## Running the Scripts
+
+1. **Extract Keypoints**
+
+```bash
+python test/utils/extract_keypoints.py
+```
+
+2. **Train Model**
+
+```bash
+python test/train_word_model_from_scratch.py
+```
+
+3. **Real-Time Prediction**
+
+```bash
+python test/realtime_hand_predict.py
+```
+
+Press `q` to quit the window.
+
+---
+
+## Notes
+
+* Make sure Python 3.10+ is installed.
+* If the webcam does not open, try changing the device index:
+
+```python
+cap = cv2.VideoCapture(1)
+```
+
+* If predictions are random, train the model with a proper dataset.
+
+---
+
+## Tech Stack
+
+* Python 3.10+
+* TensorFlow / Keras
+* MediaPipe
+* OpenCV
+* Scikit-learn
+
+---
+
+## Future Improvements
+
+* Support sentence-level ISL recognition.
+* Deploy as web or mobile application.
+* Integrate text-to-speech for accessibility.
+
+````
+
+---
+
+✅ **Explanation:**  
+- The entire README is written in Markdown syntax (`.md`).  
+- **Code blocks** are wrapped with triple backticks ``` for shell commands, Python snippets, and text blocks.  
+- It includes **requirements.txt**, dataset instructions, dummy dataset example, and running instructions.  
+
+---
+
+If you want, I can make a **super compact version** that only **shows requirements + dummy dataset code**, so it’s extremely minimal for quick usage.  
+
+Do you want me to do that?
+````
