@@ -1,7 +1,7 @@
-Ah! You want the **README content itself in a “code block” format** so that it can be **directly placed inside a `.md` file or displayed as code**. Here’s your full README entirely in Markdown code block style:
+# Indian Sign Language Recognition 🤟
 
 ````markdown
-# Indian Sign Language Recognition 🤟
+
 
 Real-Time AI System for Indian Sign Language Detection using Python, MediaPipe, and TensorFlow/Keras.
 
